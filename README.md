@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DFW Crash Pads
 
-## Getting Started
+A light, minimalistic website for a bouldering crash pad rental service in the Dallas-Fort Worth area.
 
-First, run the development server:
+## Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All pricing and contact information can be easily updated by editing the configuration file:
 
-## Learn More
+**`config/site.json`**
 
-To learn more about Next.js, take a look at the following resources:
+This file contains:
+- Business name and tagline
+- Contact information (email, phone, Instagram)
+- Pricing tiers (individual pads and combo packs)
+- Pad dimensions for each size
+- Reservation message
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Simply edit the values in this JSON file and the changes will automatically appear throughout the website.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Example: Updating Pricing
 
-## Deploy on Vercel
+```json
+"pricing": {
+  "large": {
+    "price": "$35",              // Change price
+    "size": "Large Pad",
+    "dimensions": "4ft x 5ft x 4in",  // Update dimensions
+    "description": "Perfect for tall problems and hard landings"
+  }
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Example: Updating Contact Info
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```json
+"contact": {
+  "email": "rentals@dfwcrashpads.com",  // Change email
+  "phone": "(214) 555-7237",             // Change phone
+  "instagram": "@dfwcrashpads",          // Change Instagram handle
+  "reservationMessage": "Contact us to reserve your crash pads"
+}
+```
+
+## Design
+
+The site features a light, minimalistic, outdoorsy aesthetic with:
+- Clean, boxy design with rounded corners
+- Custom typography (Outfit, DM Sans)
+- Light color scheme with sage green and terracotta accents
+- Gentle animations and smooth transitions
+- Fully responsive design
+
+## Tech Stack
+
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS v4** - Styling
+- **Google Fonts** - Custom typography
+
+## Deployment
+
+The site can be deployed to any platform that supports Next.js:
+
+### Vercel (Recommended)
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+### Other Platforms
+- Netlify
+- AWS Amplify
+- Railway
+- Render
+
+## Project Structure
+
+```
+├── app/
+│   ├── layout.tsx       # Root layout with metadata
+│   ├── page.tsx         # Homepage component
+│   └── globals.css      # Global styles and theme
+├── config/
+│   └── site.json        # Editable content configuration
+└── public/              # Static assets
+```

@@ -1,0 +1,35 @@
+{
+  "businessName": "Dallas Crash Pads",
+  "tagline": "Bouldering Crash Pad Rentals",
+  "description": "Rent high-quality crash pads for your outdoor bouldering adventures in the Dallas-Fort Worth area.",
+
+  "contact": {
+    "email": "rentals@dfwcrashpads.com",
+    "phone": "(214) 555-7237",
+    "instagram": "@dfwcrashpads",
+    "reservationMessage": "Contact us to reserve your crash pads. Send us a text (preferred), call, or email us for availability!"
+  },
+
+  "pricing": {
+    "medium": {
+      "price": "$30",
+      "size": "Medium Pads",
+      "dimensions": "3ft x 4ft x 4in",
+      "description": "Great all-around pad for most boulders"
+    },
+    "large": {
+      "price": "$40",
+      "size": "Large Pads",
+      "dimensions": "4ft x 5ft x 4in",
+      "description": "Perfect for tall problems and hard landings"
+    },
+    "combo": {
+      "price": "$60",
+      "size": "Combo Pack",
+      "dimensions": "1 Large + 1 Medium + 1 Small",
+      "description": "Everything you need for a day of sending",
+      "popular": true
+    }
+
+  }
+}
