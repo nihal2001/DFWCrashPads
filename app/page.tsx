@@ -35,7 +35,6 @@ export default function Home() {
             <span className="starburst">Let&apos;s<br />go climb!</span>
             <p>{siteConfig.description}</p>
             <a className="big-link" href="#pricing">Check out the rates »</a>
-            <p className="handwritten">↓ your landing starts here ↓</p>
           </div>
         </section>
 
@@ -55,11 +54,10 @@ export default function Home() {
         <section className="contact-section" id="contact" aria-labelledby="contact-heading">
           <div className="mail-art" aria-hidden="true">✉</div>
           <div>
-            <h2 id="contact-heading">Let&apos;s make it happen.</h2>
+            <h2 id="contact-heading">Contact Info</h2>
             <p>{siteConfig.contact.reservationMessage}</p>
             <dl className="contact-list">
-              <div><dt>Text us (preferred)</dt><dd><a href={`sms:${phone}`}>{siteConfig.contact.phone}</a></dd></div>
-              <div><dt>More of a phone person?</dt><dd><a href={`tel:${phone}`}>Give us a call</a></dd></div>
+              <div><dt>Text(please) or call us</dt><dd><a href={`sms:${phone}`}>{siteConfig.contact.phone}</a></dd></div>
               <div><dt>Electronic mail</dt><dd><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></dd></div>
               <div><dt>Find us on Instagram</dt><dd><a href={`https://instagram.com/${siteConfig.contact.instagram.replace('@', '')}`} target="_blank" rel="noopener noreferrer">{siteConfig.contact.instagram}</a></dd></div>
             </dl>
@@ -69,7 +67,7 @@ export default function Home() {
       </main>
       <footer>
         <p>© {new Date().getFullYear()} {siteConfig.businessName} · Dallas–Fort Worth, TX</p>
-        <p className="footer-note">No fancy stuff. Just crash pads.</p>
+        <p className="footer-note">Just crash pads.</p>
       </footer>
     </div>
   );
