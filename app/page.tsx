@@ -32,7 +32,6 @@ export default function Home() {
             <div className="photo-caption">V1 in my gym</div>
           </div>
           <div className="hero-note">
-            <span className="starburst">Let&apos;s<br />go climb!</span>
             <p>{siteConfig.description}</p>
             <a className="big-link" href="#pricing">Check out the rates »</a>
           </div>

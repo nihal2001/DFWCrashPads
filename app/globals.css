@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
-:root { --background: #66517e; --foreground: #171717; }
+:root { --background: #58a9d5; --foreground: #171717; }
 @theme inline { --color-background: var(--background); --color-foreground: var(--foreground); }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 16px; }
-body { margin: 0; color: var(--foreground); font: 15px/1.5 'Comic Sans MS', 'Chalkboard SE', cursive; background-color: #66517e; background-image: radial-gradient(ellipse at center, #9581aa 1px, transparent 1.5px), repeating-linear-gradient(45deg, transparent 0 12px, #ffffff06 12px 13px); background-size: 18px 18px, 26px 26px; }
+body { margin: 0; color: var(--foreground); font: 15px/1.5 'Comic Sans MS', 'Chalkboard SE', cursive; background-color: #58a9d5; background-image: url("/images/outer-texture.svg?v=sky-blue"); background-size: 1100px 700px; }
 a { color: #0000bb; text-decoration: underline; }
 a:visited { color: #620c8d; }
 a:hover { color: #c30000; }
 a:focus-visible { outline: 3px dashed #b90042; outline-offset: 5px; }
 p { margin: 0 0 16px; }
-.homepage { max-width: 1040px; margin: 24px auto; border: 5px ridge #b9c5ce; background: #ffffee; box-shadow: 8px 8px 0 #3c2d50; }
+.homepage { max-width: 1040px; margin: 24px auto; border: 5px ridge #b9c5ce; background: #ffffee; box-shadow: 8px 8px 0 #2e6b94; }
 header { padding: 18px 24px 22px; text-align: center; background: #e0f4ff; border-bottom: 3px double #243c64; }
 .tiny-banner { background: #000080; color: #ffff83; margin: 0 -24px 19px; padding: 5px 12px; font: bold 12px/1.5 'Comic Sans MS', 'Chalkboard SE', cursive; }
 .welcome { font: italic 17px Georgia, serif; margin-bottom: 8px; }
