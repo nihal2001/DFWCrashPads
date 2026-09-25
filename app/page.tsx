@@ -1,334 +1,75 @@
 import siteConfig from '@/config/site.json';
 
 export default function Home() {
+  const phone = siteConfig.contact.phone.replace(/[^0-9]/g, '');
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center px-6 sm:px-12 py-20"
-        style={{ background: 'var(--background)' }}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <div style={{ animation: 'fadeInUp 0.8s ease-out' }}>
-            <div
-              className="inline-block mb-4 px-8 py-3 rounded-full text-sm font-medium"
-              style={{
-                background: '#e8f5e9',
-                color: 'var(--moss)',
-                border: '2px solid #7cb342'
-              }}
-            >
-              Dallas-Fort Worth
-            </div>
+    <div className="homepage" id="top">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <header>
+        <h1>{siteConfig.businessName}</h1>
+        <p className="tagline">{siteConfig.tagline}</p>
+        <nav aria-label="Main navigation">
+          <a href="#top">⌂ Home</a><a href="#pricing">$ Rental rates</a><a href="#contact">✉ Contact us</a>
+        </nav>
+      </header>
 
-            <h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6"
-              style={{
-                color: 'var(--forest)',
-                fontFamily: 'var(--font-display)'
-              }}
-            >
-              {siteConfig.businessName}
-            </h1>
-
-            <p
-              className="text-xl sm:text-2xl md:text-3xl mb-4"
-              style={{
-                color: 'var(--moss)',
-                fontFamily: 'var(--font-display)',
-                fontWeight: 400
-              }}
-            >
-              {siteConfig.tagline}
-            </p>
-
-            <p
-              className="text-lg sm:text-xl max-w-2xl mx-auto mb-12"
-              style={{ color: 'var(--foreground)' }}
-            >
-              {siteConfig.description}
-            </p>
+      <main id="main">
+        <section className="hero" aria-label="Crash pad rentals">
+          <div className="scene">
+            <svg className="climbing-animation" viewBox="0 0 1536 1024" role="img" aria-labelledby="climbing-title">
+              <title id="climbing-title">A smiling climber gently swings by one hand from a cartoon cliff above a Mad Rock crash pad.</title>
+              <defs>
+                {/* Trace the original photo so the climber keeps his exact appearance. */}
+                <clipPath id="climber-cutout">
+                  <path d="M578 51 Q582 42 591 44 L602 49 611 65 613 99 621 136 641 181 664 224 682 256 695 264 702 248 693 233 691 215 700 202 703 188 Q727 168 754 180 Q778 190 773 222 L763 244 752 256 747 274 778 282 813 283 830 282 865 277 918 270 956 259 966 244 973 230 974 216 Q980 207 984 216 L987 236 1009 226 1026 223 Q1033 225 1029 230 L1001 241 1036 229 Q1043 229 1042 235 L1007 252 1037 241 Q1044 242 1040 248 L1009 263 1030 255 Q1038 257 1031 263 L1006 278 985 278 971 283 927 300 880 315 831 326 817 343 803 352 787 344 777 372 770 403 775 419 768 443 749 456 735 487 714 516 705 538 690 558 682 577 672 601 653 631 633 657 619 678 616 695 609 718 Q595 740 569 735 Q549 731 558 711 L568 698 577 682 591 666 603 638 617 605 627 576 633 546 634 530 610 520 581 502 564 523 559 548 549 572 537 593 540 609 Q546 625 533 630 L511 624 503 615 481 617 Q467 610 478 601 L501 593 515 588 526 565 535 535 540 512 Q540 498 554 487 L581 469 610 448 635 427 653 418 648 391 645 353 633 326 624 308 629 293 642 280 639 263 622 226 611 190 603 153 599 115 594 87 593 64 581 59 Z" />
+                </clipPath>
+              </defs>
+              <image href="/images/cliff-background.png" width="1536" height="1024" />
+              <g className="swinging-climber">
+                <image href="/images/dangling-climber.png" width="1536" height="1024" clipPath="url(#climber-cutout)" />
+              </g>
+            </svg>
+            <div className="photo-caption">V1 in my gym</div>
           </div>
-
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            style={{ animation: 'fadeInUp 0.8s ease-out 0.2s backwards' }}
-          >
-            <a
-              href="#pricing"
-              className="px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105"
-              style={{
-                background: '#7cb342',
-                color: 'var(--white)',
-                boxShadow: '0 6px 20px rgba(124, 179, 66, 0.4)'
-              }}
-            >
-              View Pricing
-            </a>
-
-            <a
-              href="#contact"
-              className="px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105"
-              style={{
-                background: '#ff9800',
-                color: 'var(--white)',
-                boxShadow: '0 6px 20px rgba(255, 152, 0, 0.4)'
-              }}
-            >
-              Get in Touch
-            </a>
+          <div className="hero-note">
+            <span className="starburst">Let&apos;s<br />go climb!</span>
+            <p>{siteConfig.description}</p>
+            <a className="big-link" href="#pricing">Check out the rates »</a>
+            <p className="handwritten">↓ your landing starts here ↓</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Pricing Section */}
-      <section
-        id="pricing"
-        className="relative py-24 px-6 sm:px-12"
-        style={{
-          background: '#fff9f0'
-        }}
-      >
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
-              style={{
-                color: 'var(--forest)',
-                fontFamily: 'var(--font-display)'
-              }}
-            >
-              Daily Rental Rates
-            </h2>
-            <p
-              className="text-lg sm:text-xl"
-              style={{ color: 'var(--moss)' }}
-            >
-              All prices are per day. If needed we can work out early drop off the next day.
-            </p>
+        <div className="divider" aria-hidden="true">▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲</div>
+        <section className="paper-section" id="pricing" aria-labelledby="pricing-heading">
+          <h2 id="pricing-heading">★ Crash pad rental rates ★</h2>
+          <div className="sale-offer">
+            <p className="sale-label">{siteConfig.pricing.pad.saleLabel}</p>
+            <h3>{siteConfig.pricing.pad.size}</h3>
+            <p className="regular-rate">Regular rate: <s>{siteConfig.pricing.pad.regularPrice}/day</s></p>
+            <p className="sale-price">{siteConfig.pricing.pad.price}<span> / day</span></p>
           </div>
+          <p className="fine-print">If needed, we can work out early drop off the next day. Just ask!</p>
+          <a className="retro-button" href="#contact">Reserve a pad!</a>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
-            {Object.entries(siteConfig.pricing).map(([key, plan], index) => {
-              const isPopular = 'popular' in plan && plan.popular;
-
-              // Use a simple color scheme - just alternate between two soft colors
-              const cardColor = isPopular ? '#e8f5e9' : '#ffffff';
-
-              return (
-                <div
-                  key={key}
-                  className="relative"
-                  style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.1}s backwards` }}
-                >
-                  {isPopular && (
-                    <div
-                      className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 text-sm font-bold rounded-full z-10"
-                      style={{
-                        background: '#7cb342',
-                        color: 'var(--white)',
-                        boxShadow: '0 4px 12px rgba(124, 179, 66, 0.3)'
-                      }}
-                    >
-                      ⭐ POPULAR
-                    </div>
-                  )}
-
-                  <div
-                    className="h-full p-10 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 text-center"
-                    style={{
-                      background: cardColor,
-                      border: isPopular ? '3px solid #7cb342' : '2px solid #e0e0e0',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)'
-                    }}
-                  >
-                    <div
-                      className="text-sm font-medium mb-2 uppercase tracking-wider"
-                      style={{ color: 'var(--sage)' }}
-                    >
-                      {plan.size}
-                    </div>
-
-                    <div
-                      className="text-5xl font-bold mb-2"
-                      style={{
-                        fontFamily: 'var(--font-display)',
-                        color: 'var(--forest)'
-                      }}
-                    >
-                      {plan.price}
-                      <span
-                        className="text-lg font-normal"
-                        style={{ color: 'var(--moss)' }}
-                      >
-                        /day
-                      </span>
-                    </div>
-
-                    <div
-                      className="text-sm font-medium mb-4 pb-4"
-                      style={{
-                        color: 'var(--moss)',
-                        borderBottom: '1px solid var(--sand)'
-                      }}
-                    >
-                      {plan.dimensions}
-                    </div>
-
-                    <p
-                      className="text-base leading-relaxed"
-                      style={{ color: 'var(--foreground)' }}
-                    >
-                      {plan.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+        <section className="contact-section" id="contact" aria-labelledby="contact-heading">
+          <div className="mail-art" aria-hidden="true">✉</div>
+          <div>
+            <h2 id="contact-heading">Let&apos;s make it happen.</h2>
+            <p>{siteConfig.contact.reservationMessage}</p>
+            <dl className="contact-list">
+              <div><dt>Text us (preferred)</dt><dd><a href={`sms:${phone}`}>{siteConfig.contact.phone}</a></dd></div>
+              <div><dt>More of a phone person?</dt><dd><a href={`tel:${phone}`}>Give us a call</a></dd></div>
+              <div><dt>Electronic mail</dt><dd><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></dd></div>
+              <div><dt>Find us on Instagram</dt><dd><a href={`https://instagram.com/${siteConfig.contact.instagram.replace('@', '')}`} target="_blank" rel="noopener noreferrer">{siteConfig.contact.instagram}</a></dd></div>
+            </dl>
+            <p className="fine-print">We&apos;ll get back to you as soon as possible to confirm your reservation!</p>
           </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="py-24 px-6 sm:px-12"
-        style={{ background: 'var(--background)' }}
-      >
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
-              style={{
-                color: 'var(--forest)',
-                fontFamily: 'var(--font-display)'
-              }}
-            >
-              Contact Us
-            </h2>
-            <p
-              className="text-lg sm:text-xl font-medium"
-              style={{ color: 'var(--terracotta)' }}
-            >
-              {siteConfig.contact.reservationMessage}
-            </p>
-          </div>
-
-          <div
-            className="p-12 sm:p-16 rounded-3xl"
-            style={{
-              background: '#ffffff',
-              boxShadow: '0 12px 40px rgba(0, 0, 0, 0.1)',
-              border: '3px solid #e0e0e0'
-            }}
-          >
-            <div className="space-y-6">
-              {/* Email */}
-              <div
-                className="group p-6 rounded-2xl transition-all duration-300 hover:shadow-lg"
-                style={{
-                  background: '#f5f5f5',
-                  border: '2px solid #e0e0e0'
-                }}
-              >
-                <div
-                  className="text-sm font-bold uppercase tracking-wider mb-3"
-                  style={{ color: 'var(--moss)' }}
-                >
-                  📧 Email
-                </div>
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="contact-link text-2xl font-medium"
-                  style={{
-                    fontFamily: 'var(--font-body)'
-                  }}
-                >
-                  {siteConfig.contact.email}
-                </a>
-              </div>
-
-              {/* Phone */}
-              <div
-                className="group p-6 rounded-2xl transition-all duration-300 hover:shadow-lg"
-                style={{
-                  background: '#f5f5f5',
-                  border: '2px solid #e0e0e0'
-                }}
-              >
-                <div
-                  className="text-sm font-bold uppercase tracking-wider mb-3"
-                  style={{ color: 'var(--moss)' }}
-                >
-                  📱 Phone
-                </div>
-                <a
-                  href={`tel:${siteConfig.contact.phone.replace(/[^0-9]/g, '')}`}
-                  className="contact-link text-2xl font-medium"
-                  style={{
-                    fontFamily: 'var(--font-body)'
-                  }}
-                >
-                  {siteConfig.contact.phone}
-                </a>
-              </div>
-
-              {/* Instagram */}
-              <div
-                className="group p-6 rounded-2xl transition-all duration-300 hover:shadow-lg"
-                style={{
-                  background: '#f5f5f5',
-                  border: '2px solid #e0e0e0'
-                }}
-              >
-                <div
-                  className="text-sm font-bold uppercase tracking-wider mb-3"
-                  style={{ color: 'var(--moss)' }}
-                >
-                  📸 Instagram
-                </div>
-                <a
-                  href={`https://instagram.com/${siteConfig.contact.instagram.replace('@', '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link text-2xl font-medium flex items-center gap-3"
-                  style={{
-                    fontFamily: 'var(--font-body)'
-                  }}
-                >
-                  {siteConfig.contact.instagram}
-                </a>
-              </div>
-            </div>
-
-            <div
-              className="mt-10 pt-8"
-              style={{
-                borderTop: '2px solid #e0e0e0'
-              }}
-            >
-              <p
-                className="text-center text-lg"
-                style={{ color: 'var(--moss)' }}
-              >
-                We'll get back to you as soon as possible to confirm your reservation!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer
-        className="py-16 px-6 text-center"
-        style={{ background: 'var(--cream)' }}
-      >
-        <p
-          className="text-sm font-medium"
-          style={{ color: 'var(--moss)' }}
-        >
-          © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
-        </p>
+        </section>
+      </main>
+      <footer>
+        <p>© {new Date().getFullYear()} {siteConfig.businessName} · Dallas–Fort Worth, TX</p>
+        <p className="footer-note">No fancy stuff. Just crash pads.</p>
       </footer>
     </div>
   );
